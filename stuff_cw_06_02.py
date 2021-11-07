@@ -1,14 +1,15 @@
+import math
+
+
 def is_prime(num):
-    result = True
-    if num < 0:
+    if num < 2:
         return False
-    elif num == 1 or num == 0:
-        return False
-    for dev in range(2, num):
+    if num == 2:
+        return True
+    for dev in range(2, int(math.sqrt(num)) + 1):
         if num % dev == 0:
-            print(num, dev)
-            result = False
-    return result
+            return False
+    return True
 
 
-print(is_prime(0))
+print(is_prime(73))
